@@ -51,13 +51,14 @@ export function BmmChatWidget({
         loadPreviousSession: true,
         defaultLanguage: "en",
         initialMessages: [
-          "Bonjour / Hello 👋",
-          "Je suis BMM Guide. Je peux vous aider avec le mentorat, les inscriptions et les ressources d'admission en medecine au Canada.",
+          "Bonjour, bienvenue sur BMM Guide.",
+          "Je peux vous aider avec le mentorat, l'inscription et les ressources d'admission en medecine au Canada.",
         ],
         i18n: {
           en: {
             title: "BMM Guide",
-            subtitle: "Mentorship and medical school admission guidance",
+            subtitle:
+              "Mentorat et admission en medecine, en francais et en anglais.",
             footer: "",
             getStarted: "New conversation",
             inputPlaceholder:
