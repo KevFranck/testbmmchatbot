@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+:root {
+  --brand-ink: #171513;
+  --brand-ink-soft: #2a2521;
+  --brand-red: #9f1416;
+  --brand-red-strong: #7e0f12;
+  --brand-red-soft: #f7dddd;
+  --brand-ivory: #fff8ed;
+  --brand-cream: #f3e6d2;
+  --brand-bronze: #c89555;
+  --brand-bronze-soft: #efe0c7;
+  --brand-brown: #7b4a27;
+
+  --background: #fffaf2;
+  --foreground: #171513;
+  --card: #fffdf8;
+  --card-foreground: #171513;
+  --popover: #fffdf8;
+  --popover-foreground: #171513;
+  --primary: #9f1416;
+  --primary-foreground: #fff8ed;
+  --secondary: #f3e6d2;
+  --secondary-foreground: #171513;
+  --muted: #f7eee3;
+  --muted-foreground: #695f55;
+  --accent: #c89555;
+  --accent-foreground: #1d1712;
+  --destructive: #b42318;
+  --destructive-foreground: #fff8ed;
+  --border: rgb(23 21 19 / 0.13);
+  --input: rgb(23 21 19 / 0.17);
+  --ring: #c89555;
+
+  --font-sans-stack: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif;
+  --font-mono-stack: "SFMono-Regular", "IBM Plex Mono", Consolas, monospace;
+  --font-brand-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+    Georgia, serif;
+
+  --gradient-hero:
+    radial-gradient(circle at top left, rgb(200 149 85 / 0.22), transparent 34%),
+    radial-gradient(circle at top right, rgb(159 20 22 / 0.12), transparent 28%),
+    linear-gradient(135deg, #fff8ed 0%, #f8ead8 46%, #fffdf8 100%);
+  --gradient-dark:
+    radial-gradient(circle at top left, rgb(200 149 85 / 0.18), transparent 35%),
+    radial-gradient(circle at top right, rgb(159 20 22 / 0.24), transparent 30%),
+    linear-gradient(135deg, #12100f 0%, #1b1513 45%, #0f0d0c 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-ink-soft: var(--brand-ink-soft);
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-soft: var(--brand-red-soft);
+  --color-brand-ivory: var(--brand-ivory);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-bronze: var(--brand-bronze);
+  --color-brand-bronze-soft: var(--brand-bronze-soft);
+  --color-brand-brown: var(--brand-brown);
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
+  --font-display: var(--font-brand-serif);
+  --shadow-card: 0 20px 55px -30px rgb(42 37 33 / 0.34);
+  --shadow-glow: 0 22px 60px -34px rgb(159 20 22 / 0.44);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f0d0c;
+    --foreground: #f8efe4;
+    --card: #181513;
+    --card-foreground: #f8efe4;
+    --popover: #181513;
+    --popover-foreground: #f8efe4;
+    --primary: #d6403f;
+    --primary-foreground: #fff8ed;
+    --secondary: #251f1b;
+    --secondary-foreground: #f8efe4;
+    --muted: #211c18;
+    --muted-foreground: #c7b7a5;
+    --accent: #d3a262;
+    --accent-foreground: #171513;
+    --destructive: #ef5b51;
+    --destructive-foreground: #fff8ed;
+    --border: rgb(255 248 237 / 0.13);
+    --input: rgb(255 248 237 / 0.16);
+    --ring: #d3a262;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-stack);
+  background-image:
+    radial-gradient(circle at top, rgb(200 149 85 / 0.08), transparent 32%),
+    linear-gradient(180deg, rgb(255 248 237 / 0.35), transparent 26%);
+}
+
+::selection {
+  background: rgb(159 20 22 / 0.18);
+}
+
+.font-display {
+  font-family: var(--font-brand-serif);
+}
+
+.premium-gradient {
+  background: var(--gradient-hero);
+}
+
+.surface-card {
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+}
+
+.section-grid {
+  background-image:
+    linear-gradient(to right, rgb(23 21 19 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(23 21 19 / 0.05) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  background-position: center;
+}
+
+.bmm-chat-theme {
+  --chat--color--primary: var(--brand-red);
+  --chat--color--primary-shade-50: var(--brand-red-strong);
+  --chat--color--primary--shade-100: #650b0d;
+  --chat--color--secondary: var(--brand-bronze);
+  --chat--color-secondary-shade-50: #b88242;
+  --chat--color-white: #fffdf8;
+  --chat--color-light: var(--background);
+  --chat--color-light-shade-50: var(--secondary);
+  --chat--color-light-shade-100: var(--brand-bronze-soft);
+  --chat--color-medium: #d9c4ac;
+  --chat--color-dark: var(--brand-ink);
+  --chat--color-disabled: #c7b7a5;
+  --chat--color-typing: var(--brand-brown);
+  --chat--spacing: 1rem;
+  --chat--border-radius: 1.1rem;
+  --chat--transition-duration: 0.2s;
+  --chat--font-family: var(--font-sans-stack);
+  --chat--window--width: min(26rem, calc(100vw - 2rem));
+  --chat--window--height: min(42rem, calc(100vh - 7.5rem));
+  --chat--window--bottom: max(1rem, env(safe-area-inset-bottom, 0px) + 1rem);
+  --chat--window--right: max(1rem, env(safe-area-inset-right, 0px) + 1rem);
+  --chat--window--z-index: 120;
+  --chat--window--border: none;
+  --chat--window--border-radius: 1.5rem;
+  --chat--window--margin-bottom: 1rem;
+  --chat--header-height: auto;
+  --chat--header--padding: 1.15rem 1.25rem;
+  --chat--header--background: var(--brand-ink);
+  --chat--header--color: var(--brand-ivory);
+  --chat--header--border-bottom: 1px solid rgb(255 248 237 / 0.08);
+  --chat--heading--font-size: 1.1rem;
+  --chat--subtitle--font-size: 0.95rem;
+  --chat--subtitle--line-height: 1.55;
+  --chat--message--font-size: 0.98rem;
+  --chat--message--padding: 0.95rem 1rem;
+  --chat--message--border-radius: 1rem;
+  --chat--message-line-height: 1.6;
+  --chat--message--margin-bottom: 0.9rem;
+  --chat--message--bot--background: #fffdf8;
+  --chat--message--bot--color: var(--brand-ink);
+  --chat--message--bot--border: 1px solid rgb(23 21 19 / 0.08);
+  --chat--message--user--background: var(--brand-red);
+  --chat--message--user--color: var(--brand-ivory);
+  --chat--message--user--border: none;
+  --chat--message--pre--background: rgb(23 21 19 / 0.05);
+  --chat--messages-list--padding: 1rem;
+  --chat--toggle--size: 64px;
+  --chat--toggle--width: var(--chat--toggle--size);
+  --chat--toggle--height: var(--chat--toggle--size);
+  --chat--toggle--border-radius: 999px;
+  --chat--toggle--background: var(--brand-red);
+  --chat--toggle--hover--background: var(--brand-red-strong);
+  --chat--toggle--active--background: #650b0d;
+  --chat--toggle--color: var(--brand-ivory);
+  --chat--textarea--height: 3.5rem;
+  --chat--textarea--max-height: 20rem;
+  --chat--input--font-size: 0.98rem;
+  --chat--input--padding: 0.95rem 1rem;
+  --chat--input--background: #fffdf8;
+  --chat--input--text-color: var(--brand-ink);
+  --chat--input--placeholder--font-size: 0.98rem;
+  --chat--input--border: 0;
+  --chat--input--border-radius: 0;
+  --chat--button--padding: 0.75rem 1rem;
+  --chat--button--border-radius: 999px;
+  --chat--button--font-size: 0.95rem;
+  --chat--button--color--primary: var(--brand-ivory);
+  --chat--button--background--primary: var(--brand-bronze);
+  --chat--button--color--primary--hover: var(--brand-ivory);
+  --chat--button--background--primary--hover: #b88242;
+  --chat--close--button--color-hover: var(--brand-bronze);
+  --chat--input--send--button--background: #fffdf8;
+  --chat--input--send--button--color: var(--brand-red);
+  --chat--input--send--button--background-hover: #fff6ea;
+  --chat--input--send--button--color-hover: var(--brand-red-strong);
+  --chat--body--background: linear-gradient(
+    180deg,
+    rgb(255 248 237 / 0.82),
+    rgb(243 230 210 / 0.9)
+  );
+  --chat--footer--background: color-mix(in srgb, var(--card) 92%, transparent);
+  --chat--footer--color: var(--brand-ink-soft);
+}
+
+@media (max-width: 640px) {
+  .bmm-chat-theme {
+    --chat--window--width: calc(100vw - 1rem);
+    --chat--window--height: min(34rem, calc(100vh - 6rem));
+    --chat--window--right: max(0.5rem, env(safe-area-inset-right, 0px) + 0.5rem);
+    --chat--window--bottom: max(0.5rem, env(safe-area-inset-bottom, 0px) + 0.5rem);
+    --chat--window--margin-bottom: 0.75rem;
+    --chat--toggle--size: 58px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image:
+      radial-gradient(circle at top, rgb(200 149 85 / 0.12), transparent 32%),
+      linear-gradient(180deg, rgb(18 16 15 / 0.7), transparent 28%);
+  }
+
+  .premium-gradient {
+    background: var(--gradient-dark);
+  }
+
+  .surface-card {
+    background: color-mix(in srgb, var(--card) 84%, transparent);
+  }
+
+  .section-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 248 237 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 248 237 / 0.05) 1px, transparent 1px);
+  }
+
+  .bmm-chat-theme {
+    --chat--color-white: #201a16;
+    --chat--color-light: #181513;
+    --chat--color-light-shade-50: #251f1b;
+    --chat--color-light-shade-100: #312823;
+    --chat--color-medium: #5a4e44;
+    --chat--color-dark: #f8efe4;
+    --chat--message--bot--background: #211c18;
+    --chat--message--bot--color: #f8efe4;
+    --chat--message--bot--border: 1px solid rgb(255 248 237 / 0.08);
+    --chat--message--user--background: #d6403f;
+    --chat--input--background: #181513;
+    --chat--input--text-color: #f8efe4;
+    --chat--header--background: #120f0e;
+    --chat--body--background: linear-gradient(180deg, #181513, #0f0d0c);
+    --chat--footer--background: rgb(24 21 19 / 0.96);
+    --chat--footer--color: #c7b7a5;
+    --chat--input--send--button--background: #181513;
+    --chat--input--send--button--color: #d3a262;
+    --chat--input--send--button--background-hover: #251f1b;
+    --chat--input--send--button--color-hover: #efc289;
+  }
+}
